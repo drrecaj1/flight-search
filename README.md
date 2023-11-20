@@ -15,9 +15,9 @@ To set up and run this project, you can choose between two build tools: Leininge
 ## Usage
 
 ### Input
-1.Enter the city of departure.
-1.Enter the city of destination.
-1.Specify if you are on an organized trip (type 'g') or as part of a family (insert 'f').
+1. Enter the city of departure.
+2. Enter the city of destination.
+3. Specify if you are on an organized trip (type 'g') or as part of a family (insert 'f').
 
 ### Passanger types
 
