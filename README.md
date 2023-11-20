@@ -12,9 +12,7 @@ To set up and run this project, you can choose between two build tools: Leininge
 2. Clone this repository:
 
 
-
 ## Usage
-
 
 ### Input
 1.Enter the city of departure.
