@@ -3,13 +3,23 @@ Welcome to the airline Search Engine, a reliable platform that assists in locati
 
 ## Getting Started
 
-To set up and run this project, you can choose between two build tools: Leiningen (Lein) or Clojure CLI tools (deps.edn).
+You have two options for build tools to set up and execute this project: Clojure CLI tools (deps.edn) or Leiningen (Lein).
 
 ### Using Leiningen (Recommended)
 
 1. Install Leiningen if you haven't already. Follow the instructions at [Leiningen's official website](https://leiningen.org/#install) for installation.
+2. Clone this repository: git clone
+3. Change into the project directory: cd flight-search
+4. To build and run the project, use Leiningen's commands. For example, to start the application: lein-run
 
-2. Clone this repository:
+### Using Clojure CLI Tools
+
+1. Install Clojure CLI tools if you haven't already. Follow the instructions at [Clojure's official website](https://clojure.org/guides/getting_started) for installation
+2. Clone this repository: git clone
+3. Change into the project directory: cd flight-search
+4. To build and run the project, use Clojure CLI tools. For example, to start the application: clj -m flight-search.core
+
+For your project, select the build tool that you feel most at ease with or that you prefer.
 
 
 ## Usage
