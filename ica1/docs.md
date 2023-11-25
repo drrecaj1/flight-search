@@ -21,5 +21,28 @@ Conversely, DFS by definition favors route exploration that is more focused on d
 
 
 ## Implementation Details
+Our Clojure-based flight search engine was implemented using a number of crucial processes to convert the unstructured flight data into a searchable format. Then, the Breadth-First Search (BFS) method was applied to this data to identify the best flight paths. 
+
+### Data Parsing and Structure
+
+- **Initial Data Processing:** The flight data has to be parsed into a more readable format because it was originally given as a long string. The strong string and collection manipulation features in Clojure were used to achieve this. In this phase, the create-flight-list function played a crucial role by segmenting the string into distinct flight entries, each of which included the cost, the departure and destination cities, and other details.
+- **Graph Creation:** The create-graph function was used to convert this list of flights into a structure resembling a graph in the next stage. This program essentially created a network of nodes (cities) and edges (flight routes) that appropriately reflected the available flight pathways by mapping each city to its potential destinations and the associated expenses.
+- **Handling Return Flights:** One noteworthy feature of our solution was that all flights had to be treated as return flights, which doubled the number of possible routes. This was fixed during the data processing phase, when a matching return flight was added to the flight list for every direct flight entry, guaranteeing a thorough depiction of all feasible routes.
+
+### Application of BFS Algorithm
+
+- **Route Finding:** Our flight search engine's find-routes function, which used the BFS algorithm, served as its main feature. This function examined every possible path from the departing city to the destination using the graph structure and user-specified parameters like budget and the maximum number of stops.
+- **Algorithm Customization:** In order to guarantee that the solutions offered were within the user's budget, BFS was modified to not only determine the shortest path in terms of stops but also to select routes based on the overall cost. Serving the varied demands of our target audience, which included families and tour groups with various financial restraints, required this modification.
+
+### Backend Focus
+- **User Interaction:** The principal role of our application included a straightforward console-based interface that allowed for user interaction, even if the application's primary concentration was on backend processing. To obtain customized travel schedules, users may enter their starting and ending locations as well as the type of passenger they are traveling with (family or group).
+- **No Frontend Interface:** The project refrained from creating a frontend interface in order to keep things simple and focus on algorithmic performance. Backend logic received all of the attention, which made the flight search engine reliable, effective, and precise in its route recommendations.
+
+## Challenges and Solutions
+
+
+
+## Results and Discussion
+
 
 
