@@ -88,37 +88,41 @@ Prague,Budapest,300")
                             " flights: " (dec (count route))))
                      sorted-routes)))))
 
+
 ;main function for user interaction
 (defn main []
   (println "Welcome to your trusted flight search partner where your dream destinations are just a search away!")
   (loop []
-
-
     (println "Enter departure city: ")
     (let [departure-city (read-line)]
-      (when-not (= departure-city "exit")
+      (when-not (or (= departure-city "exit") (= departure-city "restart"))
         (println "Enter destination city: ")
         (let [destination-city (read-line)]
-          (when-not (= destination-city "exit")
+          (when-not (or (= destination-city "exit") (= destination-city "restart"))
             (println "Are you a family or a group? (Enter 'f' for family, 'g' for group): ")
             (let [passenger-type (clojure.string/lower-case (read-line))]
-              (when-not (= passenger-type "exit")
+              (when-not (or (= passenger-type "exit") (= passenger-type "restart"))
                 (let [flight-list (create-flight-list flight-data)
                       graph (create-graph flight-list)
                       travel-plan (prepare-travel-plan graph
-                                                       (clojure.string/capitalize departure-city) ; capitalize the city name
-                                                       (clojure.string/capitalize destination-city) ; capitalize the city name
+                                                       (clojure.string/capitalize departure-city)
+                                                       (clojure.string/capitalize destination-city)
                                                        passenger-type)]
-                  (println "\nTravel Plan:")
-                  (doseq [plan travel-plan]
+                  (println "\nTravel Plan:")                ;; functionality where typing 'restart' restarts 
+                                                            ;; the program and typing 'exit' quits it 
+                  (doseq [plan travel-plan]                 ;; so the client can see other travel options easily
                     (println plan))
-                  (print "Type 'restart' to perform another search or 'exit' to quit: ")
-                  (let [restart (clojure.string/lower-case (read-line))]
-                    (when-not (= restart "exit")
-                      (recur))))))))))))
+                  (println "Type 'restart' to perform another search or 'exit' to quit: ")
+                  (let [command (clojure.string/lower-case (read-line))]
+                    (cond
+                      (= command "exit") (do (println "Exiting program.") (System/exit 0))
+                      (= command "restart") (recur))))))))))))
+
 
 
 (main)
+
+
 
 
 
