@@ -12,9 +12,14 @@ This project invovles developing a flight search engine with the goal to make tr
 
 
 
+## Evaluation of Choices/Algorithm chosen
+Although we had to use Clojure as the programming language for our aircraft search engine project, we were free to choose whatever algorithmic method we wanted. Because Breadth-First Search (BFS) is more appropriate for exploring aircraft networks than Depth-First Search (DFS), we chose it. Before moving on to the next level, BFS, a well-known computer science technique for navigating tree and graph structures, thoroughly investigates all of the immediate connections starting from the departing city. In the graph-like structure of our flight search engine, our method treats every city as a node and every flight path as an edge.
+
+By putting BFS into place, we made sure that all flights from the origin were taken into account first, then flights from those destinations, systematically covering all possible itineraries within the limitations of the budget and the number of stops that could be made. The quickest routes in terms of connections are found using this method, which is very useful for our target users—tour groups and families, for example—who frequently have limited flexibility in their travel schedules. Furthermore, BFS's flexibility in responding to cost factors fits with our objective of offering routes that are economical and effective for our consumers.
+
+Conversely, DFS by definition favors route exploration that is more focused on depth. This may result in the consideration of longer and less effective routes before more straightforward or cost-effective ones are discovered. This kind of behavior might compromise the effectiveness of our flight search engine, which seeks to provide quick and affordable travel options. After weighing these factors, BFS was determined to be the better option since it better matched the goals of our project and Clojure's functional advantages when it came to managing intricate data structures and algorithmic procedures.
 
 
+## Implementation Details
 
-## Algorithm : 
-The breadth-first search (BFS) algorithm, a well-known method in computer science for browsing or exploring tree and graph data structures, powers the aircraft search engine. Starting with the departure city, or any random node in a network, it initially investigates its neighbors before proceeding to the next level of nodes. This algorithm views every city as a node and every flight path as an edge in a graph related to the flight search engine. The BFS algorithm investigates all direct flights from the origin city, then proceeds to the destinations of these flights to investigate further connections. The method covers every path from the origin to the destination by repeating this multiple times, despite the limitations of budget and maximum stops. Finding the shortest path in terms of connections is one of the main functions of the BFS algorithm in this application, which is essential for users with limited flexibility in their trip plans, such families or tour groups. Furthermore, by modifying the search parameters to account for flight expenses, the algorithm may accommodate budgetary limitations, guaranteeing that the suggested routes are accessible to the travelers
 
