@@ -44,14 +44,18 @@ Our Clojure-based flight search engine was implemented using a number of crucial
 
 ## Challenges and Solutions
 - **Data Parsing:** The first challenge that we had was how to structure the data provided to us by the agency into a usable format for clojure, specifially when we considered how accurate it has to be for the engine to work. We solved this by seperating the string data into individual flight records (departure city, destination city, and price). We had to choose between using lists, vectors, or maps and even though lists and vectors offered ease in the iteration aspect, in a flight network representation, maps were more efficient because they provide faster access time which is more beneficial for BFS.
-- **Managing return flights:** The list 
-- ****
+- **Managing return flights:** The list provided to us by the agency had 22 flights from departure to desintation city. When running the code without creating the return flights the options were very limited to clients. We had to come up with a way to create return flights so there were more flights options for clients by seperating data of the cities and prices into individual parts and by switching the places of (departure destination  cost) to (destination departure  cost) so the return flights were created.
+- **User Input Validation and Handling:** Additionally, we came across another problem that was the fact tha the client had to input the name of the departure and destination. If they were to write "prague" instead of "Prague" the engine would not work. This was solved by adding the clojure function "clojure.string/capitalize" which capitalized each user input so the system can understand it based on the string data in it. 
+- **BFS with condition:** We had to implement the engine with the condition of budget and connection limits of the clients. We first defined the Breadth-First search to find the routes and used this function in the prepare-travel-plan where we added the conditions for the budget and the connections of the flights , to ensure that the engine works in a efficiant way even with the added complexities.
+-**Output:** Lastly, we noticed that when the user inputs their information and the search engine outputs the travel plan , there is no way for the user to re-start the engine. We fixed this issue by implementing lines of code for managing the application's control flow based on user input. This allow the user to either restart the engine or end it by exiting it. This is important for users who have not decided their destination city but are simply browsing for options for travelling.
+
+## Result & Discussion
+
+The flight search engine project showed how well different tools and methods work. We picked the BFS algorithm because it accurately finds the best routes by using user-defined parameters to find them. Using Clojure's advanced features, the system also showed strong data handling and processing, easily managing the large network of flight routes. The console-based interface was easy to use and gave users a good experience by checking their data carefully and fixing errors. The system was scalable and performed well, answering a wide range of user questions quickly and correctly. The project showed how important it is to choose the right algorithms when making software, especially for apps that need to process a lot of data, like flight search engines. 
+
+In the future, there are improvements we can work on as the IT department. Some would be adding real-time flight information, making the system bigger so it has a graphics user interface, and adding advanced features like trips to more than one place, longer layovers, and ticket prices that change based on real-time demand. As shown by the project's successful execution and positive user feedback, functional programming can be used to solve real-world problems. The system could be further developed and improved, making it a more useful tool for planning trips.
 
 
-
-
-
-## Results and Discussion
 
 
 
