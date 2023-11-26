@@ -19,9 +19,9 @@ By putting BFS into place, we made sure that all flights from the origin were ta
 
 Conversely, DFS by definition favors route exploration that is more focused on depth. The use of DFS in our code may result in the consideration of longer and less effective routes before more straightforward or cost-effective ones are discovered. This kind of behavior might compromise the effectiveness of our flight search engine, which seeks to provide quick and affordable travel options. After weighing these factors, BFS was determined to be the better option since it better matched the goals of our project and Clojure's functional advantages when it came to managing intricate data structures and algorithmic procedures.
 
-![BFS](https://github.com/drrecaj1/flight-search/assets/122489106/2ad4bceb-732c-4dfe-832b-cacec5c1e30e)
+![Your paragraph text](https://github.com/drrecaj1/flight-search/assets/122489106/a9942c78-63d0-4197-ba73-5a6f64b226a0)
 
-Above is a picture of how BFS works 
+Above is a picture we drew to explain how BFS works in comparison with DFS. While DFS traveres through the left subtrees first and then through the right ones , the BFS goes through level one of "children" nodes, then it moves on to the level of "grandchildren" nodes and so on. 
 
 ## Implementation Details
 Our Clojure-based flight search engine was implemented using a number of crucial processes to convert the unstructured flight data into a searchable format. Then, the Breadth-First Search (BFS) method was applied to this data to identify the best flight paths. 
