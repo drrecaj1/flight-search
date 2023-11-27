@@ -68,6 +68,7 @@ The flight search engine project showed how well different tools and methods wor
 
 In the future, there are improvements we can work on as the IT department. Some would be adding real-time flight information, making the system bigger so it has a graphics user interface, and adding advanced features like trips to more than one place, longer layovers, and ticket prices that change based on real-time demand. As shown by the project's successful execution and positive user feedback, functional programming can be used to solve real-world problems. The system could be further developed and improved, making it a more useful tool for planning trips.
 
+The code for the engine can be found in the src/ica1 file in this respitory, with the name core.clj. 
 
 
 
