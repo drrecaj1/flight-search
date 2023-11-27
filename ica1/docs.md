@@ -23,6 +23,19 @@ Conversely, DFS by definition favors route exploration that is more focused on d
 
 Above is a picture we drew to explain how BFS works in comparison with DFS. While DFS traveres through the left subtrees first and then through the right ones , the BFS goes through level one of "children" nodes, then it moves on to the level of "grandchildren" nodes and so on. 
 
+### Time and Memory Complexity Analysis:
+-**Time Complexity:** We can use Big O, Big Theta, and Big Omega notations to understand the time complexity of our implementation of the BFS algorithm.
+
+ 1.**Big O (Worst-Case Complexity):** When V and E are the numbers of vertices (cities) and edges (flight routes), respectively, the         worst-case time complexity of BFS is O(V + E). When the search must search the entire network to locate a route, as is often the         case in highly connected graphs, this complexity is observed when the algorithm has to traverse every vertex and edge in the graph.
+ 
+ 2.**Big Theta (Average-Case Complexity):**  θ(V + E) is the average-case complexity, or Big Theta complexity, for BFS. The BFS method will carry out operations proportionate to the sum of the vertices and edges in the majority of realistic circumstances, particularly with flight networks that are moderately connected. In this case, the average distribution of nodes and edges is assumed, meaning that it is not always necessary for the search to cover every possible path.    
+ 
+ 3.-**Big Omega (Best-Case Complexity):** Big Omega represents the best-case complexity, which is Ω(V), where the algorithm finds the desired path without having to go over every edge. This could happen when the destination is located inside the originating vertex's direct connections, so that fewer steps are needed. 
+                 
+-**Memory Complexity:** Our flight search engine's BFS memory complexity is mostly determined by how the flight network graph and the queue used in the BFS algorithm are stored. This gives an O(V + E) complexity when accounting for the requirement to store each vertex and edge in the graph. Our implementation required careful attention to memory management, especially since we included return flights, which doubled the number of edges in the graph.
+
+
+
 ## Implementation Details
 Our Clojure-based flight search engine was implemented using a number of crucial processes to convert the unstructured flight data into a searchable format. Then, the Breadth-First Search (BFS) method was applied to this data to identify the best flight paths. 
 
@@ -41,18 +54,6 @@ Our Clojure-based flight search engine was implemented using a number of crucial
 ### Backend Focus
 - **User Interaction:** The principal role of our application included a straightforward console-based interface that allowed for user interaction, even if the application's primary concentration was on backend processing. To obtain customized travel schedules, users may enter their starting and ending locations as well as the type of passenger they are traveling with (family or group). After the engine prints out their travel plans with the options, they will have the option to restart the engine or to exit and quit the program. This is also made possible with the user input whether they press "restart" or "exit".
 - **No Frontend Interface:** The project refrained from creating a frontend interface in order to keep things simple and focus on algorithmic performance. Backend logic received all of the attention, which made the flight search engine reliable, effective, and precise in its route recommendations.
-
-### Time and Memory Complexity Analysis:
--**Time Complexity:** We can use Big O, Big Theta, and Big Omega notations to understand the time complexity of our implementation of the BFS algorithm.
-
- 1.**Big O (Worst-Case Complexity):** When V and E are the numbers of vertices (cities) and edges (flight routes), respectively, the         worst-case time complexity of BFS is O(V + E). When the search must search the entire network to locate a route, as is often the         case in highly connected graphs, this complexity is observed when the algorithm has to traverse every vertex and edge in the graph.
- 
- 2.**Big Theta (Average-Case Complexity):**  θ(V + E) is the average-case complexity, or Big Theta complexity, for BFS. The BFS method will carry out operations proportionate to the sum of the vertices and edges in the majority of realistic circumstances, particularly with flight networks that are moderately connected. In this case, the average distribution of nodes and edges is assumed, meaning that it is not always necessary for the search to cover every possible path.    
- 
- 3.-**Big Omega (Best-Case Complexity):** Big Omega represents the best-case complexity, which is Ω(V), where the algorithm finds the desired path without having to go over every edge. This could happen when the destination is located inside the originating vertex's direct connections, so that fewer steps are needed. 
-                 
--**Memory Complexity:** Our flight search engine's BFS memory complexity is mostly determined by how the flight network graph and the queue used in the BFS algorithm are stored. This gives an O(V + E) complexity when accounting for the requirement to store each vertex and edge in the graph. Our implementation required careful attention to memory management, especially since we included return flights, which doubled the number of edges in the graph.
-
 
 ## Challenges and Solutions
 - **Data Parsing:** The first challenge that we had was how to structure the data provided to us by the agency into a usable format for clojure, specifially when we considered how accurate it has to be for the engine to work. We solved this by seperating the string data into individual flight records (departure city, destination city, and price). We had to choose between using lists, vectors, or maps and even though lists and vectors offered ease in the iteration aspect, in a flight network representation, maps were more efficient because they provide faster access time which is more beneficial for BFS.
