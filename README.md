@@ -41,3 +41,4 @@ For your project, select the build tool that you feel most at ease with or that 
 
 ## Contributing
 
+This respitory is not dedicated for exteral use. No pull requests are available.
