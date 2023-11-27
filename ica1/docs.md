@@ -46,7 +46,9 @@ Our Clojure-based flight search engine was implemented using a number of crucial
 -**Time Complexity:** We can use Big O, Big Theta, and Big Omega notations to understand the time complexity of our implementation of the BFS algorithm.
 
  1.**Big O (Worst-Case Complexity):** When V and E are the numbers of vertices (cities) and edges (flight routes), respectively, the         worst-case time complexity of BFS is O(V + E). When the search must search the entire network to locate a route, as is often the         case in highly connected graphs, this complexity is observed when the algorithm has to traverse every vertex and edge in the graph.
+ 
  2.**Big Theta (Average-Case Complexity):**  θ(V + E) is the average-case complexity, or Big Theta complexity, for BFS. The BFS method will carry out operations proportionate to the sum of the vertices and edges in the majority of realistic circumstances, particularly with flight networks that are moderately connected. In this case, the average distribution of nodes and edges is assumed, meaning that it is not always necessary for the search to cover every possible path.    
+ 
  3.-**Big Omega (Best-Case Complexity):** Big Omega represents the best-case complexity, which is Ω(V), where the algorithm finds the desired path without having to go over every edge. This could happen when the destination is located inside the originating vertex's direct connections, so that fewer steps are needed. 
                  
 -**Memory Complexity:** Our flight search engine's BFS memory complexity is mostly determined by how the flight network graph and the queue used in the BFS algorithm are stored. This gives an O(V + E) complexity when accounting for the requirement to store each vertex and edge in the graph. Our implementation required careful attention to memory management, especially since we included return flights, which doubled the number of edges in the graph.
